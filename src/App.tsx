@@ -17,12 +17,22 @@ const App = () => {
     transform: `translate3d(0, ${-activeTab * 100}%, 0)`,
   });
 
+  let timeoutRef: NodeJS.Timeout | null = null;
+
   const handleWheel = (e: React.WheelEvent) => {
-    if (e.deltaY > 0) {
-      setActiveTab((prev) => (prev + 1) % tabs.length);
-    } else {
-      setActiveTab((prev) => (prev - 1 + tabs.length) % tabs.length);
+    console.log('Wheel event:', e.deltaY);
+    if (timeoutRef) {
+      clearTimeout(timeoutRef);
     }
+
+    timeoutRef = setTimeout(() => {
+      if (e.deltaY > 0) {
+        setActiveTab((prev) => (prev + 1) % tabs.length);
+      } else {
+        setActiveTab((prev) => (prev - 1 + tabs.length) % tabs.length);
+      }
+      timeoutRef = null;
+    }, 75);
   };
 
   return (
@@ -57,6 +67,7 @@ const App = () => {
         style={{
           flex: 1,
           overflowY: "hidden",
+          height: "100%",
           ...tabStyles,
         }}
       >

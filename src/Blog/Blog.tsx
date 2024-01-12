@@ -8,7 +8,7 @@ console.log('Rendering Blog component');
 const Blog: React.FC<BlogProps> = ( { visible } ) => {
   console.log('Visible:', visible);
   return (
-    <div className="content-container" style={{ display: visible ? 'block' : 'none' }}>
+    <div className="blog-content-container" style={{ height: "100%", display: visible ? 'block' : 'none' }}>
       <h2>Blog</h2>
       <p>This is the Blog page content.</p>
     </div>

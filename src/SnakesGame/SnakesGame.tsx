@@ -99,7 +99,7 @@ const SnakesGame: React.FC<SnakesGameProps> = ({ visible }) => {
   return (
     <div id="snakes-game-container"
     onClick={handleBodyClick}
-    style={{ display: visible ? "block" : "none" }}>
+    style={{ height: "100%",  display: visible ? "block" : "none" }}>
       <h1 id="game-title">Snake Game</h1>
       <p className="high-score">Top Highest Score</p>
       {showTable && (
