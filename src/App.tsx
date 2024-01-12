@@ -14,7 +14,7 @@ const App = () => {
   };
 
   const tabStyles = useSpring({
-    transform: `translate3d(0, ${-activeTab * 100}%, 0)`,
+    // transform: `translate3d(0, ${-activeTab * 100}%, 0)`,
   });
 
   let timeoutRef: NodeJS.Timeout | null = null;
