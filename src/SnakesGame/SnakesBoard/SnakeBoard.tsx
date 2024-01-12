@@ -9,6 +9,7 @@ interface SnakeGameBoard {
   externalScore: number;
   setScore: React.Dispatch<React.SetStateAction<number>>;
   setIsGameOver: React.Dispatch<React.SetStateAction<boolean>>;
+  
 }
 
 export default function SnakeBoard({

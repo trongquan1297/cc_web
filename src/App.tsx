@@ -28,9 +28,4 @@ function App(){
   );
 }
 
-
-// function App() {
-//   return <SnakesGame />;
-// }
-
 export default App;
