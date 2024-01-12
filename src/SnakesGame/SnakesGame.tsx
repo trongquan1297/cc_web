@@ -7,6 +7,12 @@ import HighScoreTable from "./HightScores"
 
 import "./styles.css";
 
+interface SnakesGameProps {
+  visible: boolean;
+}
+
+console.log('Rendering SnakeGame component');
+
 type Player = {
   id: number;
   name: string;
@@ -18,7 +24,7 @@ const getPlayerName = () => {
   return playerName ? playerName.trim() : null;
 };
 
-export default function SnakesGame() {
+const SnakesGame: React.FC<SnakesGameProps> = ({ visible }) => {
   const [score, setScore] = useState(0);
   const [players, setPlayers] = useState<Player[]>([]);
   const [isGameOver, setIsGameOver] = useState(false);
@@ -91,7 +97,9 @@ export default function SnakesGame() {
   };
 
   return (
-    <div id="snakes-game-container" onClick={handleBodyClick}>
+    <div id="snakes-game-container"
+    onClick={handleBodyClick}
+    style={{ display: visible ? "block" : "none" }}>
       <h1 id="game-title">Snake Game</h1>
       <p className="high-score">Top Highest Score</p>
       {showTable && (
@@ -140,4 +148,6 @@ export default function SnakesGame() {
       
     </div>
   );
-}
+};
+
+export default SnakesGame;

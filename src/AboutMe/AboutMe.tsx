@@ -1,11 +1,15 @@
 import React from 'react';
 
-const AboutMe: React.FC = () => {
+interface AboutmeProps {
+    visible: boolean;
+  }
+
+const AboutMe: React.FC<AboutmeProps> = ({ visible }) => {
     return (
-        <div className="about-me-container">
+        <div className="about-me-container" style={{ display: visible ? 'block' : 'none' }}>
         <div className="image-column">
           <img
-            src="/images/pic.png" // Đặt đường dẫn đến ảnh cá nhân của bạn
+            src="/images/pic.png"
             alt="Profile"
             className="profile-image"
           />

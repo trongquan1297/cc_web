@@ -6,32 +6,6 @@
   display: flex;
 }
 
-.navigation {
-  width: 200px;
-  background-color: #716262;
-  padding: 20px;
-}
-
-.navigation h2 {
-  margin-bottom: 10px;
-}
-
-.navigation ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.about-me-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.image-column {
-  flex: 1;
-}
-
 .text-column {
   flex: 1;
   padding: 0 20px;
@@ -54,14 +28,6 @@
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 15px;
-}
-
-.navigation li {
-  cursor: pointer;
-  padding: 8px;
-  margin-bottom: 5px;
-  background-color: #ddd;
-  border-radius: 5px;
 }
 
 .content {
@@ -87,3 +53,4 @@ body {
 
   font-family: var(--base-font-family);
 }
+
