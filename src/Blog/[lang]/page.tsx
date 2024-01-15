@@ -14,7 +14,7 @@ interface Meta {
   };
 }
 
-export default function Profile() {
+function Blog() {
   const [meta, setMeta] = useState<Meta | undefined>();
   const [data, setData] = useState<any>([]);
   const [isLoading, setLoading] = useState(true);
@@ -86,3 +86,5 @@ export default function Profile() {
     </div>
   );
 }
+
+export default Blog;
