@@ -5,12 +5,6 @@ import PausedModal from "./PausedModal";
 import HighScoreTable from "./HightScores"
 
 
-import "./styles.css";
-
-interface SnakesGameProps {
-  visible: boolean;
-}
-
 console.log('Rendering SnakeGame component');
 
 type Player = {
@@ -24,7 +18,7 @@ const getPlayerName = () => {
   return playerName ? playerName.trim() : null;
 };
 
-const SnakesGame: React.FC<SnakesGameProps> = ({ visible }) => {
+const SnakesGame: React.FC = ({ }) => {
   const [score, setScore] = useState(0);
   const [players, setPlayers] = useState<Player[]>([]);
   const [isGameOver, setIsGameOver] = useState(false);
@@ -98,8 +92,7 @@ const SnakesGame: React.FC<SnakesGameProps> = ({ visible }) => {
 
   return (
     <div id="snakes-game-container"
-    onClick={handleBodyClick}
-    style={{ height: "100%",  display: visible ? "block" : "none" }}>
+    onClick={handleBodyClick}>
       <h1 id="game-title">Snake Game</h1>
       <p className="high-score">Top Highest Score</p>
       {showTable && (

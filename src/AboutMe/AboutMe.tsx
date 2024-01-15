@@ -1,12 +1,9 @@
 import React from 'react';
 
-interface AboutmeProps {
-    visible: boolean;
-  }
 
-const AboutMe: React.FC<AboutmeProps> = ({ visible }) => {
+const AboutMe: React.FC = ({}) => {
     return (
-        <div className="about-me-container" style={{ display: visible ? 'block' : 'none' }}>
+        <div className="about-me-container">
         <div className="image-column">
           <img
             src="/images/pic.png"
