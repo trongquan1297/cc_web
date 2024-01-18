@@ -31,27 +31,22 @@ function NavLink({ url, text }: NavLink) {
 
 export default function Navbar({
   links,
-  logoUrl,
-  logoText,
 }: {
   links: Array<NavLink>;
-  logoUrl: string | null;
-  logoText: string | null;
 }) {
+
   return (
     <div className="p-4 dark:bg-black dark:text-gray-100">
       <div className="container flex justify-between h-16 mx-auto px-0 sm:px-6">
-        <Logo src={logoUrl}>
-          {logoText && <h2 className="text-2xl font-bold">{logoText}</h2>}
+        <Logo src="/images/newmoon22.png" >
+          {<h2 className="text-2xl font-bold">Quan Nguyen</h2>}
         </Logo>
 
-        <div className="items-center flex-shrink-0 hidden lg:flex">
-          <ul className="items-stretch hidden space-x-3 lg:flex">
-            {links.map((item: NavLink) => (
-              <NavLink key={item.id} {...item} />
-            ))}
-          </ul>
-        </div>
+        <ul className="flex items-center hidden space-x-8 lg:flex">
+          {links.map((link) => (
+            <NavLink key={link.id} {...link} />
+          ))}
+        </ul>
 
         <button className="p-4 lg:hidden">
           <svg

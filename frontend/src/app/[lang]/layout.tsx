@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { getStrapiMedia, getStrapiURL } from "./utils/api-helpers";
 import { fetchAPI } from "./utils/fetch-api";
+import SnakeGame from "./components/SnakesGame";
 
 import { i18n } from "../../../i18n-config";
 import Footer from "./components/Footer";
@@ -78,14 +79,17 @@ export default async function RootLayout({
   const footerLogoUrl = getStrapiMedia(
     footer.footerLogo.logoImg.data.attributes.url
   );
-
+  const navbarLinks = [
+    { id: 1, url: "/", newTab: false, text: "Home" },
+    { id: 2, url: "/snake-game", newTab: true, text: "Snake Game" },
+    { id: 3, url: "/about-me", newTab: false, text: "About Me" },
+  ];
   return (
     <html lang={params.lang}>
       <body>
+        
         <Navbar
-          links={navbar.links}
-          logoUrl={navbarLogoUrl}
-          logoText={navbar.navbarLogo.logoText}
+          links={navbarLinks}
         />
 
         <main className="dark:bg-black dark:text-gray-100 min-h-screen">
