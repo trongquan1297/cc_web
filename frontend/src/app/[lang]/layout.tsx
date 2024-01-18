@@ -1,5 +1,5 @@
 // ./frontend/src/app/[lang]/layout.tsx
-
+import { useRouter } from 'next/router';
 import type { Metadata } from "next";
 import "./globals.css";
 import { getStrapiMedia, getStrapiURL } from "./utils/api-helpers";
@@ -66,6 +66,10 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lang: string };
 }) {
+
+  const router = useRouter();
+  const { pathname } = router;
+
   const global = await getGlobal();
   // TODO: CREATE A CUSTOM ERROR PAGE
   if (!global.data) return null;
@@ -82,6 +86,7 @@ export default async function RootLayout({
   const navbarLinks = [
     { id: 1, url: "/", newTab: false, text: "Home" },
     { id: 2, url: "/snake-game", newTab: true, text: "Snake Game" },
+
     { id: 3, url: "/about-me", newTab: false, text: "About Me" },
   ];
   return (
@@ -93,7 +98,7 @@ export default async function RootLayout({
         />
 
         <main className="dark:bg-black dark:text-gray-100 min-h-screen">
-          {children}
+          {pathname === '/snake-game' ? <SnakeGame /> : children}
         </main>
 
         <Footer
