@@ -1,135 +1,34 @@
-# Blog using Next.js and Strapi
-
-> **NOTE:**
-> 
-> *This project is based on the [Strapi Starter Next 13, Tailwind, Typescript, and Strapi]() made by [Trecia](https://github.com/TreciaKS), [Daniel](https://github.com/malgamves) and [Paul](https://github.com/PaulBratslavsky) from the Strapi Team.*
-
-## Introduction
-
-This project is a code repo for the Strapi blog article [Build a blog with Next.js and Strapi]().
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-1. Clone the repo locally:
+First, run the development server:
 
 ```bash
-git clone https://github.com/Marktawa/blog-strapi
-```
-
-2. Set up backend dependencies:
-
-```bash
-cd blog-strapi
-cd backend
-yarn
-```
-
-3. Set up environment variables:
-
-```bash
-cp .env.example .env
-```
-
-4. Start your project by running the following command:
-
-```bash
-  yarn build
-  yarn develop
-```
-
-Create your first admin user.
-
-![admin-user](https://user-images.githubusercontent.com/6153188/231865420-5f03a90f-b893-4057-9634-9632920a7d97.gif)
-
-## Seeding the Data
-
-At the root of our project, we have our `seed-schema.tar` file. We will use it to update the schema for our Strapi app.
-
-1. Go back to your terminal and stop your Strapi backend server by pressing `CTRL` plus `C` on your keyboard.
-   
-2. Run the following command in the root of your project folder `blog-strapi` to update the schema:
-
-```bash
-tar xvf seed-schema.tar -C backend
-```
-3. Import data into your backend's database:
-
-```bash
-cd backend
-yarn strapi import -f ../seed-data.tar.gz
-```
-
-Answer `y` to `The import will delete all assets and data in your database. Are you sure you want to proceed? (y/N)`
-
-4. After a successful import, rerun your Strapi backend server. 
-
-```bash
-yarn develop
-```
-
-In your browser, log in to your admin panel. You should see the newly imported `content` and `collection types`.
-
-![after-import](https://user-images.githubusercontent.com/6153188/231865491-05cb5818-a0d0-49ce-807e-a879f7e3070c.gif)
-
-## Frontend Setup
-
-1. Open up a new terminal session and navigate into your `frontend` folder. Set up frontend dependencies:
-
-```bash
-cd frontend
-yarn
-```
-2. Create `.env` file:
-
-```bash
-touch .env
-```
-
-3. Paste in the following. 
-
-```yaml
-NEXT_PUBLIC_STRAPI_API_TOKEN=your-api-token
-NEXT_PUBLIC_PAGE_LIMIT=6
-NEXT_PUBLIC_STRAPI_API_URL=http://127.0.0.1:1337
-```
-4. Before starting our Next JS app we need to go inside our Strapi Admin and create a token that we will be using for displaying our **content**.
-
-Inside your Strapi Admin Panel navigate to `Settings` -> `API Tokens` and click on the `Create new API Token`.
-
-![api-tokens](https://user-images.githubusercontent.com/6153188/231865572-cebc5538-374c-4050-91cd-c303fae25a3d.png)
-
-Here are our Token Settings
-
-Name: Public API Token Content
-Description: Access to public content.
-Token duration: Unlimited
-Token type: Custom
-
-In Permissions let's give the following access.
-
-| Content         |   Permissions    |
-| --------------- | :--------------: |
-| Article         | find and findOne |
-| Author          | find and findOne |
-| Category        | find and findOne |
-| Global          |       find       |
-| Page            | find and findOne |
-| Product-feature | find and findOne |
-
-![permissions](https://user-images.githubusercontent.com/6153188/231865625-a3634d89-0f40-4a6d-a356-8f654abd88b9.gif)
-
-Once you have your token add it to your `NEXT_PUBLIC_STRAPI_API_TOKEN` variable name in the `.env` file.
-
-5. Start your frontend
-
-```bash
+npm run dev
+# or
 yarn dev
+# or
+pnpm dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Learn More
 
+To learn more about Next.js, take a look at the following resources:
 
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
