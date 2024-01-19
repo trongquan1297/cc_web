@@ -97,7 +97,9 @@ const SnakesGame: React.FC = ({ }) => {
       {/* <h1 id="game-title">Snake Game</h1> */}
       <p className="high-score">Top Highest Score</p>
       {showTable && (
-        <HighScoreTable players={players} />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <HighScoreTable  players={players} />
+        </div>
       )}
       
       {justStarted ? (

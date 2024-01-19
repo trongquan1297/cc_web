@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&display=swap");
 
 #snakes-game-container {
-  background-color: #ffffdd;
+  background-color: #060606;
   min-height: 100vh;
   cursor: pointer;
   overflow: hidden;
@@ -60,7 +60,7 @@
 
 .new-game-hint {
   text-align: center;
-  color: black;
+  color: rgb(209, 64, 64);
   font-weight: 900;
   font-size: 1.5rem;
   animation: teeter 2s linear infinite;
@@ -101,7 +101,7 @@
   position: fixed;
   inset: 0;
   outline: 1px solid red;
-  background-color: #a2c579;
+  background-color: #010101;
   cursor: pointer;
 }
 

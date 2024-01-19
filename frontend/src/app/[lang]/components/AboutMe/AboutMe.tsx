@@ -1,31 +1,84 @@
+
 import React from 'react';
 
 
 const AboutMe: React.FC = ({}) => {
     return (
-        <div className="about-me-container">
-        <div className="image-column">
-          <img
-            src="/images/pic.png"
-            alt="Profile"
-            className="profile-image"
-          />
+        <div>
+          <div className="backgound-as">
+              <div className="planet">
+                <div className="r1"></div>
+                <div className="r2"></div>
+                <div className="r3"></div>
+                <div className="r4"></div>
+                <div className="r5"></div>
+                <div className="r6"></div>
+                <div className="r7"></div>
+                <div className="r8"></div>
+                <div className="shad"></div>
+              </div>
+              <div className="stars">
+                <div className="s1"></div>
+                <div className="s2"></div>
+                <div className="s3"></div>
+                <div className="s4"></div>
+                <div className="s5"></div>
+                <div className="s6"></div>
+              </div>
+              <div className="an">
+                <div className="tank"></div>
+                <div className="astro">
+                    
+                    <div className="helmet">
+                      <div className="glass">
+                        <div className="shine"></div>
+                      </div>
+                    </div>
+                    <div className="dress">
+                      <div className="c">
+                        <div className="btn1"></div>
+                        <div className="btn2"></div>
+                        <div className="btn3"></div>
+                        <div className="btn4"></div>
+                      </div>
+                    </div>
+                    <div className="handl">
+                      <div className="handl1">
+                        <div className="glovel">
+                          <div className="thumbl"></div>
+                          <div className="b2"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="handr">
+                      <div className="handr1">
+                        <div className="glover">
+                          <div className="thumbr"></div>
+                          <div className="b1"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="legl">
+                      <div className="bootl1">
+                        <div className="bootl2"></div>
+                      </div>
+                    </div>
+                    <div className="legr">
+                      <div className="bootr1">
+                        <div className="bootr2"></div>
+                      </div>
+                    </div>
+                    <div className="pipe">
+                      <div className="pipe2">
+                        <div className="pipe3"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
         </div>
-        <div className="text-column">
-          <h2>About Me</h2>
-          <p>
-            Xin chào! Tôi là QuanNguyen, một người đam mê lập trình và sáng tạo.
-            Tôi đã có nhiều kinh nghiệm trong lĩnh vực này và thích thách thức để học hỏi
-            và phát triển kỹ năng của mình.
-          </p>
-          <p>
-            Trang web này là nơi tôi chia sẻ những kiến thức, kinh nghiệm và sở thích của mình.
-            Nếu bạn có bất kỳ câu hỏi hoặc muốn liên hệ, đừng ngần ngại liên lạc với tôi!
-          </p>
-        </div>
-        
-      </div>
-    );
-  };
+
+	);
+};
 
 export default AboutMe

@@ -4,6 +4,7 @@
 import Logo from "./Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from 'react';
 
 interface NavLink {
   id: number;
@@ -34,7 +35,7 @@ export default function Navbar({
 }: {
   links: Array<NavLink>;
 }) {
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="p-4 dark:bg-black dark:text-gray-100">
       <div className="container flex justify-between h-16 mx-auto px-0 sm:px-6">
@@ -48,7 +49,7 @@ export default function Navbar({
           ))}
         </ul>
 
-        <button className="p-4 lg:hidden">
+        <button className="p-4 lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -61,7 +62,8 @@ export default function Navbar({
               strokeLinejoin="round"
               strokeWidth="2"
               d="M4 6h16M4 12h16M4 18h16"
-            ></path>
+            >
+            </path>
           </svg>
         </button>
       </div>

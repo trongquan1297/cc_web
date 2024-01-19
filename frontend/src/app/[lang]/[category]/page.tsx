@@ -4,7 +4,6 @@ import { fetchAPI } from '@/app/[lang]/utils/fetch-api';
 import PostList from '@/app/[lang]/components/PostList';
 import SnakesGame from '../components/SnakesGame';
 import AboutMe from '../components/AboutMe';
-import { usePathname } from 'next/navigation';
 
 async function fetchPostsByCategory(filter: string) {
     try {
