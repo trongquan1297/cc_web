@@ -1,6 +1,10 @@
+
 import PageHeader from '@/app/[lang]/components/PageHeader';
 import { fetchAPI } from '@/app/[lang]/utils/fetch-api';
 import PostList from '@/app/[lang]/components/PostList';
+import SnakesGame from '../components/SnakesGame';
+import AboutMe from '../components/AboutMe';
+import { usePathname } from 'next/navigation';
 
 async function fetchPostsByCategory(filter: string) {
     try {
@@ -34,15 +38,25 @@ async function fetchPostsByCategory(filter: string) {
 export default async function CategoryRoute({ params }: { params: { category: string } }) {
     const filter = params.category;
     const { data } = await fetchPostsByCategory(filter);
-
+    const Page = ({ slug }: { slug: string }) => {
+        switch (slug) {
+          case 'about-me':
+            return <AboutMe />;
+          default:
+            return <SnakesGame />;
+        }
+      };
     //TODO: CREATE A COMPONENT FOR THIS
-    if (data.length === 0) return <div>Not Posts In this category</div>;
+    if (data.length === 0) {
+        return <Page slug={filter} />;   
+    };
 
     const { name, description } = data[0]?.attributes.category.data.attributes;
 
     return (
         <div>
             <PageHeader heading={name} text={description} />
+            
             <PostList data={data} />
         </div>
     );

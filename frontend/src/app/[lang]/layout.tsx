@@ -1,5 +1,4 @@
 // ./frontend/src/app/[lang]/layout.tsx
-import { useRouter } from 'next/router';
 import type { Metadata } from "next";
 import "./globals.css";
 import { getStrapiMedia, getStrapiURL } from "./utils/api-helpers";
@@ -67,9 +66,6 @@ export default async function RootLayout({
   params: { lang: string };
 }) {
 
-  const router = useRouter();
-  const { pathname } = router;
-
   const global = await getGlobal();
   // TODO: CREATE A CUSTOM ERROR PAGE
   if (!global.data) return null;
@@ -98,7 +94,7 @@ export default async function RootLayout({
         />
 
         <main className="dark:bg-black dark:text-gray-100 min-h-screen">
-          {pathname === '/snake-game' ? <SnakeGame /> : children}
+          {children}
         </main>
 
         <Footer

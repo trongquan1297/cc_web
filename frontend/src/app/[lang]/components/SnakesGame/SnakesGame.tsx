@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect } from "react";
 import SnakeBoard from "./SnakesBoard";
 import GameOverModal from "./GameOverModal";
@@ -93,7 +94,7 @@ const SnakesGame: React.FC = ({ }) => {
   return (
     <div id="snakes-game-container"
     onClick={handleBodyClick}>
-      <h1 id="game-title">Snake Game</h1>
+      {/* <h1 id="game-title">Snake Game</h1> */}
       <p className="high-score">Top Highest Score</p>
       {showTable && (
         <HighScoreTable players={players} />
