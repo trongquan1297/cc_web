@@ -9,8 +9,8 @@ RUN npm run build
 # Stage 2: Run
 FROM node:16-alpine
 WORKDIR /app
-COPY --from=builder /app/build ./build
+COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package*.json ./
+COPY . .
 EXPOSE 3000
 CMD ["npm", "start"]
