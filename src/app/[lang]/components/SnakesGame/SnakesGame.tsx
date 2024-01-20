@@ -29,9 +29,11 @@ const SnakesGame: React.FC = ({ }) => {
 
   useEffect(() => {
 
+    const score_url = process.env.SCORE_API_URL;
     const fetchHighScores = async () => {
       try {
-        const response = await fetch('http://localhost/getTopPlayers');
+
+        const response = await fetch(`${score_url}/getTopPlayers`);
         const data = await response.json();
         console.log(data);
         setPlayers(data);
@@ -43,7 +45,7 @@ const SnakesGame: React.FC = ({ }) => {
 
     const saveScore = async ( playerName: string,playerScore: number) => {
       try {
-        const response = await fetch('http://localhost/addScore', {
+        const response = await fetch('`${score_url}/addScore', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
