@@ -33,7 +33,7 @@ const SnakesGame: React.FC = ({ }) => {
     const fetchHighScores = async () => {
       try {
 
-        const response = await fetch(`${score_url}/getTopPlayers`);
+        const response = await fetch(`${score_url}/getTop5Players`);
         const data = await response.json();
         console.log(data);
         setPlayers(data);
