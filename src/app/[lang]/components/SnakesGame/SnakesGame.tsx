@@ -33,7 +33,7 @@ const SnakesGame: React.FC = ({ }) => {
     const fetchHighScores = async () => {
       try {
 
-        const response = await fetch(`${score_url}/getTop5Players`);
+        const response = await fetch('https://score.quannguyen.fun/getTopPlayers');
         const data = await response.json();
         console.log(data);
         setPlayers(data);
@@ -45,7 +45,7 @@ const SnakesGame: React.FC = ({ }) => {
 
     const saveScore = async ( playerName: string,playerScore: number) => {
       try {
-        const response = await fetch('`${score_url}/addScore', {
+        const response = await fetch('https://score.quannguyen.fun/addScore', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
