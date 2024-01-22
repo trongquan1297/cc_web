@@ -502,6 +502,11 @@
     "has-proto" "^1.0.1"
     "has-symbols" "^1.0.3"
 
+"glitched-writer@2.0.29":
+  "integrity" "sha512-ItmmiFTSKVIbs/ngTLAszsu2czKYXYar54GgJcST5U6BH7sAaivG3fgDJFDIgNaau7rGadV5bLu3QThd5iAC8w=="
+  "resolved" "https://registry.npmjs.org/glitched-writer/-/glitched-writer-2.0.29.tgz"
+  "version" "2.0.29"
+
 "glob-parent@^5.1.2":
   "integrity" "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow=="
   "resolved" "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz"
