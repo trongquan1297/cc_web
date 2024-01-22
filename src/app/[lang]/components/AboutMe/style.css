@@ -73,7 +73,18 @@ color: #ecf0f1;
     .content__container__list__item {
         line-height:40px;
         margin:0;
+    }
+    #devops {
         color: #d21084;
+    }
+    #guitar {
+        color: rgb(58, 227, 137);
+    }
+    #astro {
+        color: #abd210;
+    }
+    #photo {
+        color: #d2102a;
     }
     }
 }
