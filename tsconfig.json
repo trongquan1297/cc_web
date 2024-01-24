@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/[lang]/components/AboutMe/AboutMe.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/[lang]/components/AboutMe/AboutMe.tsx", "src/app/[lang]/components/AboutMe/galaxy.js"],
   "exclude": ["node_modules"]
 }

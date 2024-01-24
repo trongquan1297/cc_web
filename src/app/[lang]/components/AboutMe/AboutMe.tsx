@@ -1,6 +1,7 @@
 
 import React from 'react';
 import "./style.css";
+import "./galaxy.css";
 
 
 const AboutMe: React.FC = ({}) => {
@@ -9,8 +10,15 @@ const AboutMe: React.FC = ({}) => {
 
     return (
       <div>
+        <div className="night">
+          <div className="star"></div>
+          <div className="star"></div>
+          <div className="star"></div>
+          <div className="star"></div>
+          <div className="star"></div>
+        </div>
         <div className="hello">
-          <h1 className="hello_text">Hi !</h1>
+          <h1 className="hello_text" >Hi !</h1>
         </div>
         <div className="content">
           <div className="content__container">

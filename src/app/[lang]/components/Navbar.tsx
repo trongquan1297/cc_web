@@ -39,11 +39,11 @@ export default function Navbar({
   return (
     <div className="p-4 dark:bg-black dark:text-gray-100">
       <div className="container flex justify-between h-16 mx-auto px-0 sm:px-6">
-        <Logo src="/images/newmoon22.png" >
-          {<h2 className="text-2xl font-bold">Quan Nguyen</h2>}
+        <Logo src="/images/logo.png" >
+          {<h2 className="text-2xl text-gray-100 font-bold">Quan Nguyen</h2>}
         </Logo>
 
-        <ul className="flex items-center hidden space-x-8 lg:flex">
+        <ul className="flex text-gray-100 items-center hidden space-x-8 lg:flex">
           {links.map((link) => (
             <NavLink key={link.id} {...link} />
           ))}

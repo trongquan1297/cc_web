@@ -50,6 +50,13 @@ export default async function CategoryRoute({ params }: { params: { category: st
         return <Page slug={filter} />;   
     };
 
+    const categoryAttributes = data[0]?.attributes?.category?.data?.attributes;
+
+    if (!categoryAttributes) {
+    // handle the case when categoryAttributes is null or undefined
+        return <div>No data</div>;
+    }
+
     const { name, description } = data[0]?.attributes.category.data.attributes;
 
     return (

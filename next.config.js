@@ -10,7 +10,7 @@ const nextConfig = {
       remotePatterns: [
         {
           protocol: 'https',
-          hostname: 'blog.quannguyen.fun',
+          hostname: 'api.blog.quannguyen.fun',
           pathname: '/uploads/**',
         },
         {
