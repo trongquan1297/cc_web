@@ -39,7 +39,7 @@ export default function Navbar({
   return (
     <div className="p-4 dark:bg-black dark:text-gray-100">
       <div className="container flex justify-between h-16 mx-auto px-0 sm:px-6">
-        <Logo src="/images/logo.png" >
+        <Logo src='/images/logo.png' >
           {<h2 className="text-2xl text-gray-100 font-bold">Quan Nguyen</h2>}
         </Logo>
 
@@ -49,13 +49,13 @@ export default function Navbar({
           ))}
         </ul>
 
-        <button className="p-4 lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button className="p-4 lg:hidden" text-red-600 onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="w-6 h-6 dark:text-gray-100"
+            className="w-6 h-6 dark:text-white "
           >
             <path
               strokeLinecap="round"
@@ -66,6 +66,13 @@ export default function Navbar({
             </path>
           </svg>
         </button>
+        {isMenuOpen && (
+          <ul className="flex text-red-600  items-center space-x-8 lg:flex">
+            {links.map((link) => (
+              <NavLink key={link.id} {...link} />
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
