@@ -3,7 +3,7 @@
     color: #54b3d6;
       padding: 0 .25rem;
       margin: 0 -.25rem;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    transition: color .7s ease-in-out, box-shadow .7s ease-in-out;
   }
   #nav:hover {
     color: #fff;
@@ -14,7 +14,7 @@
   #nav {
       color: #fcfcfc;
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
     line-height: 1.5;
     text-decoration: none;
