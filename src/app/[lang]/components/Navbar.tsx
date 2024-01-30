@@ -5,6 +5,7 @@ import Logo from "./Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from 'react';
+import "./link.css"
 
 interface NavLink {
   id: number;
@@ -18,14 +19,15 @@ function NavLink({ url, text }: NavLink) {
 
   return (
     <li className="flex">
-      <Link
+      <a
+        id="nav"
         href={url}
-        className={`flex items-center mx-4 -mb-1 border-b-2 dark:border-transparent ${
+        className={`flex items-center no-underline mx-4 -mb-1 dark:border-transparent ${
           path === url && "dark:text-violet-400 dark:border-violet-400"
         }}`}
       >
         {text}
-      </Link>
+      </a>
     </li>
   );
 }
@@ -38,12 +40,12 @@ export default function Navbar({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="p-4 dark:bg-black dark:text-gray-100">
-      <div className="container flex justify-between h-16 mx-auto px-0 sm:px-6">
+      <div className="container flex justify-between h-16 mx-auto px-0 sm:px-6 ">
         <Logo src='/images/logo.png' >
-          {<h2 className="text-2xl text-gray-100 font-bold">Quan Nguyen</h2>}
+          {<h2 className="text-2xl text-gray-100 font-bold" id="nav">Quan Nguyen</h2>}
         </Logo>
 
-        <ul className="flex text-gray-100 items-center hidden space-x-8 lg:flex">
+        <ul className="flex text-gray-100 items-center hidden space-x-8 lg:flex no-underline">
           {links.map((link) => (
             <NavLink key={link.id} {...link} />
           ))}
