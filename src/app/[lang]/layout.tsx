@@ -87,15 +87,12 @@ export default async function RootLayout({
   return (
     <html lang={params.lang}>
       <body>
-        
         <Navbar
           links={navbarLinks}
         />
-
-        <main className="dark:bg-black dark:text-gray-100 min-h-screen">
+        <main className="bg-white dark:bg-black dark:text-gray-100 min-h-screen">
           {children}
         </main>
-
         <Footer
           legalLinks={footer.legalLinks}
           socialLinks={footer.socialLinks}
