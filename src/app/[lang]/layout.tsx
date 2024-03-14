@@ -8,6 +8,8 @@ import { i18n } from "../../../i18n-config";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
+import Theme from './components/ThemProvider'
+
 const FALLBACK_SEO = {
   title: "Strapi Starter Next Blog",
   description: "Strapi Starter Next Blog",
@@ -59,10 +61,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({
   children,
+  theme,
   params,
 }: {
   children: React.ReactNode;
   params: { lang: string };
+  theme: React.ReactNode;
 }) {
 
   const global = await getGlobal();
@@ -87,6 +91,7 @@ export default async function RootLayout({
   return (
     <html lang={params.lang}>
       <body>
+        <Theme>{theme}</Theme>
         <Navbar
           links={navbarLinks}
         />
