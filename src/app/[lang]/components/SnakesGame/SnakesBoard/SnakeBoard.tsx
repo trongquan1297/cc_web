@@ -90,7 +90,7 @@ export default function SnakeBoard({
   }, [isPlaying]);
 
   return (
-    <div>
+    <div className="">
       <canvas id="game-canvas" ref={canvasRef}></canvas>
     </div>
   );

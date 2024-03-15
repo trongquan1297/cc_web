@@ -94,7 +94,7 @@ const SnakesGame: React.FC = ({ }) => {
   };
 
   return (
-    <div id="snakes-game-container"
+    <div className="bg-white dark:bg-black dark:text-gray-100"
     onClick={handleBodyClick}>
       {/* <h1 id="game-title">Snake Game</h1> */}
       <p className="high-score">Top Highest Score</p>
@@ -112,7 +112,7 @@ const SnakesGame: React.FC = ({ }) => {
             <span>Score</span>
             <span>{score}</span>
           </p>
-          <p className="pause-hint">
+          <p className="pause-hint ">
             <strong>PAUSE:</strong> Click Anywhere or Press <kbd>esc</kbd>
           </p>
         </>

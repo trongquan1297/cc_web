@@ -50,7 +50,7 @@ export default function Navbar({
   };
 
   return (
-    <div className="p-4 bg-violet-300 sticky top-0 dark:bg-black dark:text-gray-100">
+    <div className="p-4 bg-violet-400 sticky top-0 dark:bg-black dark:text-gray-100">
       <div className="container flex justify-between h-16 mx-auto px-0 sm:px-6 ">
         <Logo src='/images/logo.png' >
           {<h2 className="text-2xl text-gray-100 font-bold" id="nav">Quan Nguyen</h2>}

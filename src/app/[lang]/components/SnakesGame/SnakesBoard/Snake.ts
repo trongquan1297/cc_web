@@ -134,3 +134,10 @@ export default class Snake {
     }
   }
 }
+
+window.addEventListener("keydown", function (e) {
+  // Ngăn chặn di chuyển màn hình khi nhấn các phím mũi tên
+  if(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+      e.preventDefault();
+  }
+});
