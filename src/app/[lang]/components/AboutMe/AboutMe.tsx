@@ -2,6 +2,8 @@
 import React from 'react';
 import "./style.css";
 import "./galaxy.css";
+import "./aboutme.css"
+import createStars from "./animation"
 
 
 const AboutMe: React.FC = ({}) => {
@@ -10,19 +12,21 @@ const AboutMe: React.FC = ({}) => {
 
     return (
       <div className="">
-        <div className="night">
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-        </div>
-        <div className="hello ">
-          <h1 className="hello_text text-violet-400 dark:bg-black dark:text-gray-100" >Hi !</h1>
+        <div className="sky min-h-screen">
+          <div className="sky__phase sky__dawn"></div>
+          <div className="sky__phase sky__noon"></div>
+          <div className="sky__phase sky__dusk"></div>
+          <div className="sky__phase sky__midnight">
+            <div id="sky__stars"></div>
+          </div>
+          <div className="orbit">
+            <div className="sun"></div>
+            <div className="moon"></div>
+          </div>
         </div>
         <div className="content">
           <div className="content__container">
-            <p className="content__container__text text-violet-400 dark:bg-black dark:text-gray-100" >
+            <p className="content__container__text text-violet-200 dark:text-violet-200" >
               Eveything in 
             </p>
             
