@@ -74,6 +74,11 @@ export default function SnakeBoard({
             break;
         }
       };
+      window.addEventListener("keydown", function (e) {
+        if(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+            e.preventDefault();
+        }
+      });
     }
 
     return () => {
@@ -95,3 +100,5 @@ export default function SnakeBoard({
     </div>
   );
 }
+
+
