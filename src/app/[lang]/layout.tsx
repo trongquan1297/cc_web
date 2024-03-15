@@ -85,7 +85,7 @@ export default async function RootLayout({
   ];
   return (
     <html lang={params.lang}>
-      <body>
+      <body className="bg-white dark:bg-black">
         <Navbar
           links={navbarLinks}
         />

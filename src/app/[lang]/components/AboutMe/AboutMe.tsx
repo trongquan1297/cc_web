@@ -9,7 +9,7 @@ const AboutMe: React.FC = ({}) => {
   
 
     return (
-      <div>
+      <div className="">
         <div className="night">
           <div className="star"></div>
           <div className="star"></div>
@@ -17,12 +17,12 @@ const AboutMe: React.FC = ({}) => {
           <div className="star"></div>
           <div className="star"></div>
         </div>
-        <div className="hello">
-          <h1 className="hello_text" >Hi !</h1>
+        <div className="hello ">
+          <h1 className="hello_text text-violet-400 dark:bg-black dark:text-gray-100" >Hi !</h1>
         </div>
         <div className="content">
           <div className="content__container">
-            <p className="content__container__text">
+            <p className="content__container__text text-violet-400 dark:bg-black dark:text-gray-100" >
               Eveything in 
             </p>
             
