@@ -2,11 +2,12 @@
 
 "use client";
 import Logo from "./Logo";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from 'react';
 import "./link.css"
-import Theme from './ThemProvider';
+import { useTheme } from 'next-themes';
+import Theme from './ThemProvider'
+import ChangeTheme from "./ChangeTheme";
 
 interface NavLink {
   id: number;
@@ -39,6 +40,15 @@ export default function Navbar({
   links: Array<NavLink>;
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const toggleTheme = () => {
+    if (theme === 'dark') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  };
+
   return (
     <div className="p-4 bg-violet-300 dark:bg-black dark:text-gray-100">
       <div className="container flex justify-between h-16 mx-auto px-0 sm:px-6 ">
@@ -50,7 +60,9 @@ export default function Navbar({
           {links.map((link) => (
             <NavLink key={link.id} {...link} />
           ))}
+          <Theme>{<ChangeTheme></ChangeTheme>}</Theme>
         </ul>
+        
         <button className="p-4 lg:hidden" text-red-600 onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
