@@ -3,8 +3,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 import { CgWebsite } from "react-icons/cg";
-import { FaDiscord } from "react-icons/fa";
-import { AiFillTwitterCircle, AiFillYoutube } from "react-icons/ai";
+import { AiFillYoutube } from "react-icons/ai";
 
 interface FooterLink {
   id: number;
@@ -55,12 +54,8 @@ function RenderSocialIcon({ social }: { social: string | undefined }) {
   switch (social) {
     case "WEBSITE":
       return <CgWebsite />;
-    case "TWITTER":
-      return <AiFillTwitterCircle />;
     case "YOUTUBE":
       return <AiFillYoutube />;
-    case "DISCORD":
-      return <FaDiscord />;
     default:
       return null;
   }
@@ -73,6 +68,12 @@ export default function Footer({
   legalLinks: Array<FooterLink>;
   socialLinks: Array<FooterLink>;
 }) {
+
+  // const sclink = [
+  //   { id: 1, url: "https://quannguyen.fun", newTab: true, text: "WEBSITE", social: "website" },
+  //   { id: 2, url: "www.youtube.com/@nguyentrongquan4135", newTab: true, text: "YOUTUBE", social: "youtube" },
+  //   { id: 3, url: "https://t.me/niumun22", newTab: true, text: "TELEGRAM", social: "telegram" },
+  // ]
 
   return (
     <footer className="py-6 bg-white dark:bg-black dark:text-gray-50">
@@ -93,7 +94,7 @@ export default function Footer({
                 <a
                   key={link.id}
                   rel="noopener noreferrer"
-                  href={link.url}
+                  href="https://quannguyen.fun"
                   title={link.text}
                   target={link.newTab ? "_blank" : "_self"}
                   className="flex items-center justify-center w-10 h-10 rounded-full dark:bg-violet-400 dark:text-gray-900"
