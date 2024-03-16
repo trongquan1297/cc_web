@@ -1,23 +1,23 @@
 // ./frontend/src/app/[lang]/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import { getStrapiMedia, getStrapiURL } from "./utils/api-helpers";
+import { getMedia, getURL } from "./utils/api-helpers";
 import { fetchAPI } from "./utils/fetch-api";
 
 import { i18n } from "../../../i18n-config";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import Footer from "./components/Home/Footer";
+import Navbar from "./components/Home/Navbar";
 
 const FALLBACK_SEO = {
-  title: "Strapi Starter Next Blog",
-  description: "Strapi Starter Next Blog",
+  title: " Starter Next Blog",
+  description: " Starter Next Blog",
 }
 
 
 async function getGlobal(): Promise<any> {
-  const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+  const token = process.env.NEXT_PUBLIC__API_TOKEN;
 
-  if (!token) throw new Error("The Strapi API Token environment variable is not set.");
+  if (!token) throw new Error("The  API Token environment variable is not set.");
 
   const path = `/global`;
   const options = { headers: { Authorization: `Bearer ${token}` } };
@@ -52,7 +52,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: metadata.metaTitle,
     description: metadata.metaDescription,
     icons: {
-      icon: [new URL(url, getStrapiURL())],
+      icon: [new URL(url, getURL())],
     },
   };
 }
@@ -71,11 +71,11 @@ export default async function RootLayout({
   
   const { navbar, footer } = global.data.attributes;
 
-  const navbarLogoUrl = getStrapiMedia(
+  const navbarLogoUrl = getMedia(
     navbar.navbarLogo.logoImg.data.attributes.url
   );
 
-  const footerLogoUrl = getStrapiMedia(
+  const footerLogoUrl = getMedia(
     footer.footerLogo.logoImg.data.attributes.url
   );
   const navbarLinks = [
@@ -85,6 +85,7 @@ export default async function RootLayout({
   ];
   return (
     <html lang={params.lang}>
+      <title>QuanNguyen's Blog</title>
       <body className="bg-white dark:bg-black">
         <Navbar
           links={navbarLinks}

@@ -2,9 +2,9 @@
 import { useState, useEffect, useCallback } from "react";
 import { fetchAPI } from "./utils/fetch-api";
 
-import Loader from "./components/Loader";
-import PostList from "./components/PostList";
-import PageHeader from "./components/PageHeader";
+import Loader from "./components/Home/Loader";
+import PostList from "./components/Home/PostList";
+import PageHeader from "./components/Home/PageHeader";
 
 interface Meta {
   pagination: {
@@ -22,7 +22,7 @@ export default function Profile() {
   const fetchData = useCallback(async (start: number, limit: number) => {
     setLoading(true);
     try {
-      const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+      const token = process.env.NEXT_PUBLIC__API_TOKEN;
       const path = `/articles`;
       const urlParamsObject = {
         sort: { createdAt: "desc" },

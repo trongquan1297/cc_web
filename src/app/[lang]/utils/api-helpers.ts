@@ -1,10 +1,10 @@
 // ./frontend/src/app/[lang]/utils/api-helpers.ts
 
-export function getStrapiURL(path = '') {
-    return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'}${path}`;
+export function getURL(path = '') {
+    return `${process.env.NEXT_PUBLIC__API_URL || 'http://localhost:1337'}${path}`;
 }
 
-export function getStrapiMedia(url: string | null) {
+export function getMedia(url: string | null) {
     if (url == null) {
         return null;
     }
@@ -14,8 +14,8 @@ export function getStrapiMedia(url: string | null) {
         return url;
     }
 
-    // Otherwise prepend the URL path with the Strapi URL
-    return `${getStrapiURL()}${url}`;
+    // Otherwise prepend the URL path with the  URL
+    return `${getURL()}${url}`;
 }
 
 export function formatDate(dateString: string) {

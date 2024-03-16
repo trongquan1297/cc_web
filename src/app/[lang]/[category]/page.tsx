@@ -1,13 +1,13 @@
 
-import PageHeader from '@/app/[lang]/components/PageHeader';
+import PageHeader from '@/app/[lang]/components/Home/PageHeader';
 import { fetchAPI } from '@/app/[lang]/utils/fetch-api';
-import PostList from '@/app/[lang]/components/PostList';
+import PostList from '@/app/[lang]/components/Home/PostList';
 import SnakesGame from '../components/SnakesGame';
 import AboutMe from '../components/AboutMe';
 
 async function fetchPostsByCategory(filter: string) {
     try {
-        const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+        const token = process.env.NEXT_PUBLIC__API_TOKEN;
         const path = `/articles`;
         const urlParamsObject = {
             sort: { createdAt: 'desc' },

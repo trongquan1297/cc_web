@@ -1,6 +1,6 @@
 // ./frontend/stc/app/[lang]/utils/fetch-api.tsx
 import qs from "qs";
-import { getStrapiURL } from "./api-helpers";
+import { getURL } from "./api-helpers";
 
 export async function fetchAPI(
   path: string,
@@ -19,7 +19,7 @@ export async function fetchAPI(
 
     // Build request URL
     const queryString = qs.stringify(urlParamsObject);
-    const requestUrl = `${getStrapiURL(
+    const requestUrl = `${getURL(
       `/api${path}${queryString ? `?${queryString}` : ""}`
     )}`;
 

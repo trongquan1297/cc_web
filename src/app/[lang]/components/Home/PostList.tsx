@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { getStrapiMedia, formatDate } from "../utils/api-helpers";
+import { getMedia, formatDate } from "../../utils/api-helpers";
 
 interface Article {
   id: 4;
@@ -56,14 +56,14 @@ export default function PostList({
     <section className="container my-16 p-6 mx-auto space-y-6 sm:space-y-12">
       <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {articles.map((article) => {
-          const imageUrl = getStrapiMedia(
+          const imageUrl = getMedia(
             article.attributes.cover.data?.attributes.url
           );
 
           const category = article.attributes.category.data?.attributes;
           const authorsBio = article.attributes.authorsBio.data?.attributes;
 
-          const avatarUrl = getStrapiMedia(
+          const avatarUrl = getMedia(
             authorsBio?.avatar.data.attributes.url
           );
 
