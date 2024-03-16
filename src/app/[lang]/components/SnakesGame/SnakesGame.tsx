@@ -100,7 +100,7 @@ const SnakesGame: React.FC = ({ }) => {
   return (
     <div className="bg-white dark:bg-black dark:text-gray-100"
     onClick={handleBodyClick}>
-      <h1 id="game-title">Snake Game</h1>
+      <h1 id="game-title" className="text-black-100 dark:text-gray-100">Snake Game</h1>
       {/* <p className="high-score">Top Highest Score</p> */}
       {showTable && (
         <div style={{ position: 'absolute', top: '50%', left: '85%', transform: 'translate(-50%, -50%)' }}>
