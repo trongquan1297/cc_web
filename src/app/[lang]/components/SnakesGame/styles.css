@@ -8,7 +8,7 @@
 
 #game-title {
   text-align: center;
-  background-color: #99ccff;
+  background-color: #ff99df;
   color: #222;
   font-size: 2.5rem;
   padding-block: 1.5rem;
@@ -17,7 +17,7 @@
 }
 
 .high-score {
-  background-color: #d2de32;
+  background-color: #de32d5;
   color: black;
   font-variant: small-caps;
   text-align: center;
@@ -194,3 +194,9 @@
   margin: 0 auto;
 }
 
+/* .high-score-table {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */

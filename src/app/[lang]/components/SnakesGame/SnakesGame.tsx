@@ -25,7 +25,7 @@ const SnakesGame: React.FC = ({ }) => {
   const [isGameOver, setIsGameOver] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [justStarted, setJustStarted] = useState(true);
-  const [showTable, setShowTable] = useState(true);
+  const [showTable, setShowTable] = useState(false);
 
   useEffect(() => {
 
@@ -86,20 +86,24 @@ const SnakesGame: React.FC = ({ }) => {
       setIsPlaying(true);
       setJustStarted(false);
       setScore(0);
-      setShowTable(false)
+      setShowTable(true);
       return;
     }
 
     !isGameOver && setIsPlaying(!isPlaying);
+
+    if (isGameOver) {
+      setShowTable(false);
+    }
   };
 
   return (
     <div className="bg-white dark:bg-black dark:text-gray-100"
     onClick={handleBodyClick}>
-      {/* <h1 id="game-title">Snake Game</h1> */}
-      <p className="high-score">Top Highest Score</p>
+      <h1 id="game-title">Snake Game</h1>
+      {/* <p className="high-score">Top Highest Score</p> */}
       {showTable && (
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ position: 'absolute', top: '50%', left: '85%', transform: 'translate(-50%, -50%)' }}>
           <HighScoreTable  players={players} />
         </div>
       )}
@@ -124,7 +128,6 @@ const SnakesGame: React.FC = ({ }) => {
           externalScore={score}
           setScore={setScore}
           setIsGameOver={setIsGameOver}
-
         />
       )}
 
