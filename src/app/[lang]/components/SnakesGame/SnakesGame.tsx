@@ -47,7 +47,6 @@ const SnakesGame: React.FC = ({ }) => {
       try {
         const response = await fetch('https://api.score.quannguyen.fun/addScore', {
           method: 'POST',
-          mode: 'no-cors',
           headers: {
             'Content-Type': 'application/json',
           },
