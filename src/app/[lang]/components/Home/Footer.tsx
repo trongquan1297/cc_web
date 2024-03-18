@@ -2,8 +2,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import { CgWebsite } from "react-icons/cg";
-import { FaTelegram } from "react-icons/fa";
+import { FaTelegram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiFillYoutube } from "react-icons/ai";
 
 interface FooterLink {
@@ -54,9 +53,9 @@ function CategoryLink({ attributes }: CategoryLink) {
 function RenderSocialIcon({ social }: { social: string | undefined }) {
   switch (social) {
     case "WEBSITE":
-      return <CgWebsite />;
+      return <FaLinkedin />;
     case "YOUTUBE":
-      return <AiFillYoutube />;
+      return <FaGithub />;
     case "TWITTER":
       return <FaTelegram />;
     default:
